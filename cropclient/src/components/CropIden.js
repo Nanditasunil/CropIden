@@ -66,12 +66,12 @@ const CropIden = () => {
         </div>
         <div className="button-container">
           <button
-            className="btn-primary"
+            className="btn-primary-2"
             onClick={() => document.querySelector("#file").click()}
           >
             Select Image
           </button>
-          <button className="btn-primary" onClick={handleUpload}>
+          <button className="btn-primary-2" onClick={handleUpload}>
             Upload
           </button>
         </div>

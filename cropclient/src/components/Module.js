@@ -24,23 +24,23 @@ const Module = () => {
       logo: mod1,
       level: "Crop Identification",
       desc: "Our cutting-edge computer vision technology excels in accurately identifying various crops, regardless of their growth stage or environmental conditions. This enables insurance companies to streamline their risk assessment process and make informed, data-driven decisions.",
-      button: "Identify",
+      button: "Identify Crop",
       content: <CropIden />,
     },
     {
       logo: mod2,
       level: "Age Determination",
       desc: "Understanding the precise growth stage of crops is crucial for insurance companies to assess risk accurately. Leveraging advanced algorithms, we determine the age of crops based on visual data, providing invaluable insights for insurance analysis and agricultural management.",
-      button: "Age",
+      button: "Determine Growth ",
       content: <AgeIden />,
     },
   ];
 
   return (
-    <section id="module" className="py-10 bg-green-300 relative">
+    <section id="module" className="py-10 bg-green-400 relative">
       <div className="mt-8 text-gray-100 text-center">
         <h3 className="text-4xl font-semibold">
-          Our <span className="text-cyan-600">Modules</span>
+          Our <span className="text-green-800">Modules</span>
         </h3>
         <div
           className="flex items-center justify-center mt-12 gap-10 flex-wrap"
@@ -49,7 +49,7 @@ const Module = () => {
           {skills?.map((skill, i) => (
             <div
               key={i}
-              className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[26rem] bg-green-800 p-10 rounded-xl flex flex-col items-center justify-center"
+              className="group relative min-w-[10rem] max-w-[26rem] bg-green-700 p-10 rounded-xl flex flex-col items-center justify-center"
             >
               <div className="w-32 h-32 flex items-center justify-center rounded-full">
                 <div className="text-6xl w-28 h-28 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
@@ -63,9 +63,9 @@ const Module = () => {
               <p className="text-3xl mt-4 text-green-400 font-semibold">
                 {skill.level}
               </p>
-              <p className="text-1xl mt-3">{skill.desc}</p>
+              <p className="text-1xl text-white mt-3">{skill.desc}</p>
               <button
-                className="btn-primary mt-8"
+                className="btn-primary-2 mt-8"
                 onClick={() => openModal(skill.content)}
               >
                 {skill.button}

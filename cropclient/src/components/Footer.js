@@ -15,7 +15,7 @@ const Footer = () => {
             </h4>
           </div>
           <div className="lg:w-1/6 text-center lg:text-right">
-            <p className="text-sm">Copyright 2024. All Rights Reserved</p>
+            <p className="text-sm">&copy;Copyright 2024. All Rights Reserved</p>
           </div>
         </div>
       </div>
