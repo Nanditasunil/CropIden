@@ -1,23 +1,38 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import React, { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import mod1 from "../assets/iden.png";
 import mod2 from "../assets/age.png";
+import AgeIden from "./AgeIden";
+import CropIden from "./CropIden";
 
 const Module = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedContent, setSelectedContent] = useState(null);
+
+  const openModal = (content) => {
+    setShowModal(true);
+    setSelectedContent(content);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedContent(null);
+  };
+
   const skills = [
     {
       logo: mod1,
       level: "Crop Identification",
       desc: "Our cutting-edge computer vision technology excels in accurately identifying various crops, regardless of their growth stage or environmental conditions. This enables insurance companies to streamline their risk assessment process and make informed, data-driven decisions.",
       button: "Identify",
-      link: "/cropiden", // URL path for Crop Identification component
+      content: <CropIden />,
     },
     {
       logo: mod2,
       level: "Age Determination",
       desc: "Understanding the precise growth stage of crops is crucial for insurance companies to assess risk accurately. Leveraging advanced algorithms, we determine the age of crops based on visual data, providing invaluable insights for insurance analysis and agricultural management.",
       button: "Age",
-      link: "/ageiden", // URL path for Age Determination component
+      content: <AgeIden />,
     },
   ];
 
@@ -49,14 +64,30 @@ const Module = () => {
                 {skill.level}
               </p>
               <p className="text-1xl mt-3">{skill.desc}</p>
-              {/* Use Link from react-router-dom to navigate to the specified components */}
-              <Link to={skill.link} className="btn-primary mt-8">
+              <button
+                className="btn-primary mt-8"
+                onClick={() => openModal(skill.content)}
+              >
                 {skill.button}
-              </Link>
+              </button>
             </div>
           ))}
         </div>
       </div>
+
+      {showModal && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-8 w-4/5 max-w-lg relative">
+            <button
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+              onClick={closeModal}
+            >
+              <AiOutlineClose size={24} />
+            </button>
+            {selectedContent}
+          </div>
+        </div>
+      )}
     </section>
   );
 };

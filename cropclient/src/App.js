@@ -1,6 +1,5 @@
-import React from "react";
+import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -11,17 +10,15 @@ import CropIden from "./components/CropIden";
 
 function App() {
   return (
-    <Router>
-      <div>
+    <div>
+      <>
         <Navbar />
         <Hero />
-        <Route path="/about" component={About} />
-        <Route path="/module" component={Module} />
-        <Route path="/cropIden" component={CropIden} />
-        <Route path="/ageIden" component={AgeIden} />
+        <About />
+        <Module />
         <Footer />
-      </div>
-    </Router>
+      </>
+    </div>
   );
 }
 

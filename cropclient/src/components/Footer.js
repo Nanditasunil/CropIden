@@ -6,7 +6,7 @@ import navIcon3 from "../assets/home.jpg";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="footer bg-green-700 text-white py-12">
+    <footer className="footer bg-green-800 text-white py-12">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:justify-between">
           <div className="lg:w-1/6">
