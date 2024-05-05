@@ -8,30 +8,28 @@ const Navbar = () => {
     { name: "ABOUT", link: "#about" },
     { name: "MODULES", link: "#module" },
   ];
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const nav = document.querySelector("nav");
+    const handleScroll = () => {
       window.scrollY > 0 ? setSticky(true) : setSticky(false);
-    });
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
       className={`fixed w-full left-0 top-0 z-[999] ${
-        sticky ? "bg-green-800/60  text-whites-900" : "text-white"
+        sticky ? "bg-green-800/60 text-white" : "bg-white/80 text-gray-900"
       }`}
     >
-      <div className=" bg-green-800 flex items-center justify-between">
+      <div className="bg-green-800 flex items-center justify-between">
         <div className="mx-7">
           <h4 className="text-4xl font-bold">
             <span className="text-green-200">Crop</span>Pal
           </h4>
         </div>
-        <div
-          className={` ${
-            sticky ? "md:bg-white/0 bg-white" : "bg-white"
-          } text-gray-900 md:block hidden px-7 py-2 font-medium  rounded-bl-full`}
-        >
+        <div className="bg-white text-gray-900 md:block hidden px-7 py-2 font-medium rounded-bl-full">
           <ul className="flex items-center gap-1 py-2 font-semibold text-xl">
             {menuLinks?.map((menu, i) => (
               <li key={i} className="px-6 hover:text-green-500">
@@ -42,7 +40,7 @@ const Navbar = () => {
         </div>
         <div
           onClick={() => setOpen(!open)}
-          className={`z-[999]  ${
+          className={`z-[999] ${
             open ? "text-gray-900" : "text-gray-100"
           } text-3xl md:hidden m-5`}
         >
