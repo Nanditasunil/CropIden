@@ -29,7 +29,7 @@ const Module = () => {
     },
     {
       logo: mod2,
-      level: "Age Determination",
+      level: "Growth Detection",
       desc: "Understanding the precise growth stage of crops is crucial for insurance companies to assess risk accurately. Leveraging advanced algorithms, we determine the age of crops based on visual data, providing invaluable insights for insurance analysis and agricultural management.",
       button: "Determine Growth ",
       content: <AgeIden />,

@@ -30,7 +30,7 @@ const About = () => {
                 <p>
                   At CropPal, we're committed to revolutionizing agriculture
                   with cutting-edge technology. Our computer vision solution,
-                  powered by ResNet395, offers unparalleled accuracy in crop
+                  powered by VGG16 and EfficientNet-B0, offers unparalleled accuracy in crop
                   identification and growth stage analysis.
                 </p>
                 <br />
@@ -41,7 +41,7 @@ const About = () => {
                 </p>
                 <br />
                 <p>
-                  With ResNet395's high accuracy, we're reshaping the landscape
+                  With high accuracy models, we're reshaping the landscape
                   of agriculture, paving the way for a more sustainable future.
                 </p>
               </p>

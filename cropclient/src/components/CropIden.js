@@ -25,7 +25,7 @@ const CropIden = () => {
     if (selectedImage) {
       setIsImageUploaded(true);
       const formData = new FormData();
-      formData.append("file", selectedImage);
+      formData.append("file", selectedImage); // Ensure 'file' matches the key in Flask code
 
       try {
         const response = await axios.post(
@@ -33,7 +33,7 @@ const CropIden = () => {
           formData,
           {
             headers: {
-              "Content-Type": "multipart/form-data",
+              "Content-Type": "multipart/form-data", // Ensure correct headers
             },
           }
         );

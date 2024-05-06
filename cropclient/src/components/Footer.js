@@ -10,8 +10,8 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:justify-between">
           <div className="lg:w-1/6">
-            <h4 className="text-4xl uppercase font-bold">
-              Cro<span className="text-green-500">pi</span>fy
+            <h4 className="text-4xl font-bold">
+              Crop<span className="text-green-200">Pal</span>
             </h4>
           </div>
           <div className="lg:w-1/6 text-center lg:text-right">
